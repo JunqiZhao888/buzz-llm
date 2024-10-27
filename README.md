@@ -1,7 +1,15 @@
 # BUZZ: Beehive-structured Sparse KV Cache with Segmented Heavy Hitters for Efficient LLM Inference
 
 ## Abstract
-Large language models (LLMs) have become essential in natural language processing, powering a wide range of applications. However, these models often struggle with inference speed and computational efficiency, which can hinder real-time deployment and degrade user experience. The key-value (KV) cache mechanism has been introduced to alleviate computational overhead during the prefilling and decoding stages of transformer models. While previous approaches, such as H2O, aim to retain the most important token information, they still face challenges in preserving contextual understanding. In this paper, we introduce BUZZ, a new KV caching algorithm designed to leverage structured contextual information, minimize cache memory usage and enhance inference speed. BUZZ utilizes a beehive-structured sparse cache, implementing a sliding window to capture the most recent information, segmenting historical tokens into chunks, and dynamically selecting the most important tokens within local neighborhoods. We evaluate BUZZ on four real-world datasets—CNN/Daily Mail, XSUM, Wikitext, and 10-QA. Our results show that BUZZ (1) reduces cache memory usage in LLM inference by **2.5×** while maintaining above 99% accuracy in long-text summarization, and (2) surpasses state-of-the-art performance in multi-document question answering by **7.69%** under the same cache memory limit, where full cache methods encounter out-of-memory issues. Additionally, we validate that BUZZ operates with log(n) time complexity, achieving significant inference speedup.
+Large language models (LLMs) are essential in natural language processing but often struggle with inference speed and computational efficiency, limiting real-time deployment. The key-value (KV) cache mechanism reduces computational overhead in transformer models, but challenges in maintaining contextual understanding remain. 
+
+In this paper, we propose **BUZZ**, a novel KV caching algorithm that leverages structured contextual information to minimize cache memory usage while enhancing inference speed. BUZZ employs a beehive-structured sparse cache, incorporating a sliding window to capture recent information and dynamically segmenting historical tokens into chunks to prioritize important tokens in local neighborhoods.
+
+We evaluate BUZZ on four real-world datasets: **CNN/Daily Mail**, **XSUM**, **Wikitext**, and **10-QA**. Our results demonstrate that BUZZ:
+
+1. Reduces cache memory usage by **2.5×** in LLM inference while maintaining over 99% accuracy in long-text summarization.
+2. Surpasses state-of-the-art performance in multi-document question answering by **7.69%** under the same memory limit, where full cache methods encounter out-of-memory issues.
+3. Demonstrates lower perplexity than state-of-the-art.
 
 ## Usage
 ### Dependencies
