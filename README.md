@@ -11,6 +11,8 @@ We evaluate BUZZ on four real-world datasets: **CNN/Daily Mail**, **XSUM**, **Wi
 2. Surpasses state-of-the-art performance in multi-document question answering by **7.69%** under the same memory limit, where full cache methods encounter out-of-memory issues.
 3. Demonstrates lower perplexity than state-of-the-art.
 
+For further details, please refer to the full paper on [arXiv](https://arxiv.org/pdf/2410.23079).
+
 ## Usage
 ### Dependencies
 
